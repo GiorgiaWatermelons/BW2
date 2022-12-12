@@ -1,0 +1,6 @@
+.fixed-bottom > div:first-child {
+  background-color: rgb(40, 37, 37);
+}
+.fixed-bottom > div:last-child {
+  background-color: rgba(0, 0, 0, 0.364);
+}/*# sourceMappingURL=style.css.map */
