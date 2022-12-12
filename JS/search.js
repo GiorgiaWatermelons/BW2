@@ -6,10 +6,10 @@ let searchInput = document.querySelector("input");
 let name = "queen";
 let url = null;
 
-//mettere setInterval di modo che ogni tot si rinnova la ricerca
 
 
-searchInput.addEventListener("keyup", function () { 
+
+searchInput.addEventListener("keyup", function () {
     console.log(searchInput.value);
     search(searchInput.value);
 });
@@ -18,8 +18,6 @@ searchInput.addEventListener("keyup", function () {
 
 function impagina(response) { //usa la response per creare la card dell'artista, e ci appiccica l'event listener per ridirezionare
 
-
-    
     document.querySelector("div").innerHTML=" <div class='card' style='width: 18rem;'>"+
     "<div id='imgArtistaDiv' class='d-flex justify-content-center m-4'></div>"+
   "<div class='card-body'>"+
@@ -32,10 +30,12 @@ function impagina(response) { //usa la response per creare la card dell'artista,
     imgArtistaDiv.innerHTML = `<img src=${response.data[0].artist.picture} alt="img_artista" class="rounded-circle">`;
     document.getElementsByClassName("card-title")[0].innerHTML = response.data[0].artist.name;
     card.addEventListener("mousedown", function () { window.location.href = "artist.html"; });
+
 }
 
 function search(name) { //carica la pagina con i dati dell'artista usando la func impagina, salva url per fetch pagina artista in localStorage 
-        fetch(` https://striveschool-api.herokuapp.com/api/deezer/search?q=${name}`)
+     
+    fetch(` https://striveschool-api.herokuapp.com/api/deezer/search?q=${name}`)
             .then(response => {
                 if (response.ok) {
                     return response.json();
