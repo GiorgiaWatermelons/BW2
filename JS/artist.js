@@ -7,8 +7,8 @@ let ascoltatori = document.querySelectorAll("div")[1]
 let divDeiBrani = document.body.children[5];
 let immagineCerchio = document.body.children[3].children[0];
 let autoreCerchio = document.body.children[3].children[1].children[1];
-let id = 412;
-fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${id}`)
+let url = sessionStorage.getItem("urlLastSearch");
+fetch(url)
 //fetch(sessionStorage.getItem("urlLastSearch"))
     .then(response => {
         if (response.ok) {
@@ -16,7 +16,7 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${id}`)
         }
     })
     .then(response => {
-        console.log(response);
+        console.log("response",response);
         /* qui metti il lavoro per l'impaginazione */
 
         infoArtista.innerHTML = `<img src=${response.picture_big} class="img-fluid" alt="img_artista">
@@ -35,9 +35,7 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${id}`)
 
         //gestisciCanzoneSelezionata(response);
 
-        console.log(response.tracklist);
-
-        fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/412/top?limit=50`)
+        fetch(response.tracklist)
         //fetch(sessionStorage.getItem("urlLastSearch"))
             .then(response => {
                 if (response.ok) {
