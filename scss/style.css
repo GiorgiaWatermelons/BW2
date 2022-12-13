@@ -77,4 +77,8 @@ i {
 }
 #div-search div :nth-child(10) {
   background-color: #5db4e0;
+}
+
+.bottom {
+  height: 150px;
 }/*# sourceMappingURL=style.css.map */

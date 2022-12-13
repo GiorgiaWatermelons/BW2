@@ -45,7 +45,7 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${id}`)
                 }
             })
             .then(response => {
-                console.log(response);
+                console.log("response è: ",response);
                 /* qui metti il lavoro per l'impaginazione */
         
                 
@@ -73,14 +73,14 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${id}`)
         //impagina tutti i brani
         let tracksArray = response.data;
         console.log(tracksArray);
-        tracksArray.forEach(e => {
+        tracksArray.forEach((e,i) => {
             
             
             
             divDeiBrani.innerHTML += 
             `<div class="d-flex align-items-center justify-content-between mt-3">
             <div>
-                <p>${1}</p>
+                <p>${i+1}</p>
             </div>
             <div>
             <img src=${e.album.cover_small} class="" alt="img_artista">
@@ -92,8 +92,8 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${id}`)
             <div>
                 <i class="bi bi-three-dots-vertical"></i>
             </div>
-            </div> `;
-        
+            </div>`;
+
         });
     }
 
