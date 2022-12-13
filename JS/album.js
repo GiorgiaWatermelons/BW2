@@ -3,7 +3,7 @@ let infoAlbum = document.querySelectorAll("div")[1];
 let divDegliAlbum = document.body.children[3];
 let albumArray = []; //array di oggetti contenente le Tracks
 let currentTrack = null;
-
+let iconaPlayBassa = null;
 fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${search}`)
     .then(response => {if (response.ok) {
         return response.json();
@@ -12,10 +12,10 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${search}`)
     .then(response => {
     
         console.log("JSON fetchato",response);
-        document.querySelector("div").innerHTML = `<div class="row">
-                                                   <div class="col-2"><i class="bi bi-arrow-left" style="font-size:1.8rem"></i></div>
-                                                   <img src=${response.cover} alt="img_album" class="col-8"></div>
-                                                   `;        
+        document.querySelector("div").innerHTML = `<div class="row">` +
+            ` <div class="col-2"><i class="bi bi-arrow-left" style="font-size:1.8rem"></i></div>` +
+            `<img src=${response.cover} alt="img_album" class="col-8"></div>`;
+                                                           
         infoAlbum.children[0].innerHTML = response.title;
     
 
@@ -25,16 +25,11 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${search}`)
 
         loadAlbumArray(tracksArray); //carica albumArray
 
-        impaginaAlto(response);
+        impaginaAlto(response); //impagina prima parte pagina 
+
         impaginaAlbum(); //impagina le tracks di albumArray nel divDegliAlbum
 
         gestisciCanzoneSelezionata(response); //gestisce il comportamento della scritta della canzone selezionata
-
-
-        //audio("https://cdns-preview-b.dzcdn.net/stream/c-bcf686b9b7b146a3ce3d160cbfa2d1b5-7.mp3");
-
-
-        
 
         //albumArray[2].play(); funziona
 
@@ -86,14 +81,9 @@ function gestisciCanzoneSelezionata(response) {
     //sistemo il nome canzone nel caso di default
     testoCanzoneCorrente.innerHTML = albumArray[0].title + " by " + albumArray[0].author;
 
-
-
-    
-
-   
     //inizializzazione funzionalità tracklist 
 
-    let iconaPlayBassa = document.getElementsByClassName("bi-play-fill")[0];
+    iconaPlayBassa = document.getElementsByClassName("bi-play-fill")[0];
 
 
     for (let albumEL of divDegliAlbum.children) {
@@ -142,12 +132,34 @@ let fotoArtista = document.body.children[1].children[1].children[0];
 fotoArtista.innerHTML =`<img src="${response.artist.picture_small}" class="rounded-circle" alt="img_artista">`
 }
 
+function selezionata(albumDiv) { 
+//imposta le features che seguono al mousedown su "albumDiv":
+// 
+// 
+// 1) aggiornare il testoCanzoneCorrente
+// 2) aggiornare l'event listener attaccato alla CTA play
+// 
+    
+    let testoCanzoneCorrente = document.body.children[4].children[0].children[0];
+    
+    currentTrack = albumArray.find(track => { return track.title == albumDiv.children[0].children[0].innerHTML; });
+    console.log("currentTrack: ", currentTrack);
+    testoCanzoneCorrente.innerHTML = currentTrack.title + " by " + currentTrack.author;  //setta testoCanzoneCorrente 
 
-
-
-        
-
-
+    
+    //aggiorno el dell'icona play
+    let iconaPlayBassa = document.getElementsByClassName("bi-play-fill")[0];  
+    //azzero gli EL attaccati a iconaPlayBassa con un trucco:
+    let elClone = iconaPlayBassa.cloneNode(true);
+    iconaPlayBassa.parentNode.replaceChild(elClone, iconaPlayBassa);
+    //attacco il nuovo EL
+    
+    elClone.addEventListener("mousedown", function () { 
+        currentTrack.play();
+        console.log("playing??");
+    });    
+    
+}
 
 
 class Track { 
