@@ -1,26 +1,96 @@
-
 .fixed-bottom{
     >div:first-child{
         background-color: rgb(40, 37, 37);
     }
     >div:last-child{
-        background-color: rgba(0, 0, 0, 0.364);
+        background-color: rgba(0, 0, 0, 0.8);
     }
 }
 
+i{     
+    font-size: 23px;
+}
 
-.justify-content-between{
-    div:first-child{
-        i{font-size: 1.3rem;}
-        i:hover{background-color: white; border-radius: 50%;color:black;}
-     
+
+.bordo-arrotondato{
+    border-radius: 15px;
+}
+
+#playlist1{
+    h3{
+        font-size: 90%;
+        margin-left: 10px;
     }
+    img{
+        border-radius: 10px;
+        
+    }
+}
 
-        div:last-child{
-            i:first-child{font-size: 1.3rem;}
-            i:first-child:hover{background-color: white; border-radius: 50%;color:black;}
-       
-            i:last-child{font-size: 2.5rem;}
-            i:last-child:hover{color:green}
+.testo{
+   text-align: left;
+   position: absolute;
+   right: 23%;
+   div{
+    position: relative;
+    left: 70%;
+    top: 105px;
+    p{
+        padding-top: 9px;
+        padding-right: 5px;
+    }
+    i{
+        
+        font-size: 28px;
+    }
+   }
+}
+
+#div-search{
+    text-align: center;
+    div{
+        div{
+            margin: 10px;
+            height: 130px;
+            border-radius: 15px;
+            text-align: left;
+
         }
+        :first-child {
+            background-color: #e03301;
+        }
+        :nth-child(2){
+            background-color: #1e3264;
+        }
+        :nth-child(3){
+            background-color: #e9105c;
+        }
+        :nth-child(4){
+            background-color: #158a08;
+        }
+        :nth-child(5){
+            background-color: #bc5800;
+        }
+        :nth-child(6){
+            background-color:#d84000;
+        }
+        :nth-child(7){
+            background-color: #de108b;
+        }
+        :nth-child(8){
+            background-color: #84629f;
+        }
+        :nth-child(9){
+            background-color: #f4ea1e;
+        }
+        :nth-child(10){
+            background-color: #5db4e0;
+        }
+    
+        
+}
+}
+
+.bottom{
+    height: 150px;
 }

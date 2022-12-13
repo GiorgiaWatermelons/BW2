@@ -2,28 +2,85 @@
   background-color: rgb(40, 37, 37);
 }
 .fixed-bottom > div:last-child {
-  background-color: rgba(0, 0, 0, 0.364);
+
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
-.justify-content-between div:first-child i {
-  font-size: 1.3rem;
+i {
+  font-size: 23px;
 }
-.justify-content-between div:first-child i:hover {
-  background-color: white;
-  border-radius: 50%;
-  color: black;
+
+.bordo-arrotondato {
+  border-radius: 15px;
 }
-.justify-content-between div:last-child i:first-child {
-  font-size: 1.3rem;
+
+#playlist1 h3 {
+  font-size: 90%;
+  margin-left: 10px;
 }
-.justify-content-between div:last-child i:first-child:hover {
-  background-color: white;
-  border-radius: 50%;
-  color: black;
+#playlist1 img {
+  border-radius: 10px;
 }
-.justify-content-between div:last-child i:last-child {
-  font-size: 2.5rem;
+
+.testo {
+  text-align: left;
+  position: absolute;
+  right: 23%;
 }
-.justify-content-between div:last-child i:last-child:hover {
-  color: green;
+.testo div {
+  position: relative;
+  left: 70%;
+  top: 105px;
+}
+.testo div p {
+  padding-top: 9px;
+  padding-right: 5px;
+}
+.testo div i {
+  font-size: 28px;
+}
+
+#div-search {
+  text-align: center;
+}
+#div-search div div {
+  margin: 10px;
+  height: 130px;
+  border-radius: 15px;
+  text-align: left;
+}
+#div-search div :first-child {
+  background-color: #e03301;
+}
+#div-search div :nth-child(2) {
+  background-color: #1e3264;
+}
+#div-search div :nth-child(3) {
+  background-color: #e9105c;
+}
+#div-search div :nth-child(4) {
+  background-color: #158a08;
+}
+#div-search div :nth-child(5) {
+  background-color: #bc5800;
+}
+#div-search div :nth-child(6) {
+  background-color: #d84000;
+}
+#div-search div :nth-child(7) {
+  background-color: #de108b;
+}
+#div-search div :nth-child(8) {
+  background-color: #84629f;
+}
+#div-search div :nth-child(9) {
+  background-color: #f4ea1e;
+}
+#div-search div :nth-child(10) {
+  background-color: #5db4e0;
+}
+
+.bottom {
+  height: 150px;
+
 }/*# sourceMappingURL=style.css.map */
