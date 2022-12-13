@@ -3,4 +3,27 @@
 }
 .fixed-bottom > div:last-child {
   background-color: rgba(0, 0, 0, 0.364);
+}
+
+.justify-content-between div:first-child i {
+  font-size: 1.3rem;
+}
+.justify-content-between div:first-child i:hover {
+  background-color: white;
+  border-radius: 50%;
+  color: black;
+}
+.justify-content-between div:last-child i:first-child {
+  font-size: 1.3rem;
+}
+.justify-content-between div:last-child i:first-child:hover {
+  background-color: white;
+  border-radius: 50%;
+  color: black;
+}
+.justify-content-between div:last-child i:last-child {
+  font-size: 2.5rem;
+}
+.justify-content-between div:last-child i:last-child:hover {
+  color: green;
 }/*# sourceMappingURL=style.css.map */

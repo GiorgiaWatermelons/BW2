@@ -1,8 +1,4 @@
 
-
-
-
-
 .fixed-bottom{
     >div:first-child{
         background-color: rgb(40, 37, 37);
@@ -13,4 +9,18 @@
 }
 
 
+.justify-content-between{
+    div:first-child{
+        i{font-size: 1.3rem;}
+        i:hover{background-color: white; border-radius: 50%;color:black;}
+     
+    }
 
+        div:last-child{
+            i:first-child{font-size: 1.3rem;}
+            i:first-child:hover{background-color: white; border-radius: 50%;color:black;}
+       
+            i:last-child{font-size: 2.5rem;}
+            i:last-child:hover{color:green}
+        }
+}
