@@ -2,6 +2,7 @@
   background-color: rgb(40, 37, 37);
 }
 .fixed-bottom > div:last-child {
+
   background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -81,4 +82,5 @@ i {
 
 .bottom {
   height: 150px;
+
 }/*# sourceMappingURL=style.css.map */

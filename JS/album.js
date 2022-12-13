@@ -1,4 +1,3 @@
-
 let search = 75621062;
 let infoAlbum = document.querySelectorAll("div")[1];
 let divDegliAlbum = document.body.children[3];
@@ -11,8 +10,12 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${search}`)
     }
     })
     .then(response => {
+    
         console.log("JSON fetchato",response);
-        document.querySelector("div").innerHTML = `<img src=${response.cover} alt="img_album">`;
+        document.querySelector("div").innerHTML = `<div class="row">
+                                                   <div class="col-2"><i class="bi bi-arrow-left" style="font-size:1.8rem"></i></div>
+                                                   <img src=${response.cover} alt="img_album" class="col-8"></div>
+                                                   `;        
         infoAlbum.children[0].innerHTML = response.title;
     
 
@@ -22,14 +25,19 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${search}`)
 
         loadAlbumArray(tracksArray); //carica albumArray
 
+        impaginaAlto(response);
         impaginaAlbum(); //impagina le tracks di albumArray nel divDegliAlbum
 
         gestisciCanzoneSelezionata(response); //gestisce il comportamento della scritta della canzone selezionata
 
+
         //audio("https://cdns-preview-b.dzcdn.net/stream/c-bcf686b9b7b146a3ce3d160cbfa2d1b5-7.mp3");
 
-        //albumArray[2].play(); funziona
+
         
+
+        //albumArray[2].play(); funziona
+
     });
 
 
@@ -114,12 +122,32 @@ function gestisciCanzoneSelezionata(response) {
     }
 }
 
+function impaginaAlto(response) {
 
-function addEventListener() { 
-    //aggiunge EL all'icona play per far girare la canzone selezionata
+//INSERISCO IL NOME ALBUM DINAMICO
+    let nomeAlbum = document.body.children[1].children[0];
+nomeAlbum.innerHTML = `<h1 id="nome_album">${response.title}</h1>`;
 
 
+//inserisco anche nome artista e anno
+let nomeArtista = document.body.children[1].children[1].children[1];
+nomeArtista.innerHTML =`${response.artist.name}`;
+console.log("nomeArtista",nomeArtista.innerHTML)
+
+let annoAlbum = document.body.children[1].children[2].children[1];
+annoAlbum.innerHTML = `${response.release_date}`;
+
+//inserisco l'IMMAGINE ARTISTA
+let fotoArtista = document.body.children[1].children[1].children[0];
+fotoArtista.innerHTML =`<img src="${response.artist.picture_small}" class="rounded-circle" alt="img_artista">`
 }
+
+
+
+
+        
+
+
 
 
 class Track { 
