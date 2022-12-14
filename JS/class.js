@@ -1,12 +1,15 @@
-
 /* materiale comune */
+
 /* 1) variabili */
-export class Track { 
-    constructor(title,author,anteprimaUrl) {
+export class Track { //classe che gestisce la singola canzone
+    constructor(title,author,anteprimaUrl,rank=0, img=null, duration=-1) {
         this.title = title;
         this.author = author;
+        this.rank = rank;
         this.playing = false;
         this.selected = false; //indica se la Track compare nel testoCanzoneCorrente (vedi gestisciCanzoneSelezionata())
+        this.img = img;
+        this.duration = duration;
         this.song = new Audio(anteprimaUrl); 
     }        
     play() { //gestisce il play/pause della canzone
@@ -23,65 +26,56 @@ export class Track {
 
 }
 
-export let albumArray = []; //array di oggetti di tipo Track, in cui salviamo le tracks di un album
-export let divDeiBrani = document.getElementById("divBrani");
-export let currentTrack = null;
-
+export let albumArray = []; //array di oggetti di tipo Track
+export let divDeiBrani = document.getElementById("divBrani"); //un div del dom, padre dei div delle canzoni
+export let currentTrack = null; //contiene l'oggetto di tipo Track che è stato selezionato dall'utente
+export let titoli=divDeiBrani.querySelectorAll(".titoloCanzone");
 
 /* 2) funzioni */
 
-export function loadAlbumArray(tracksArray) {
-    //carica albumArray, partendo da un tracksArray ottenuto da qualche fetch del sito
+export function loadAlbumArray(tracksArray) { //carica albumArray, partendo da un tracksArray ottenuto da qualche fetch del sito
+    
         
     for (let track of tracksArray) {
         
-        let u = new Track(track.title,track.artist.name, track.preview)
+        let u = new Track(track.title,track.artist.name, track.preview, track.rank, track.album.cover_small, track.duration)
             
         albumArray.push(u);
     }
     console.log("ecco albumArray: ", albumArray);
 }
 
-export function impaginaAlbum() { //impagina le tracks di albumArray nel divDeiBrani 
-
-    albumArray.forEach(track => {
-        
-        
-        
-        divDeiBrani.innerHTML += `<div class="d-flex align-items-center justify-content-between mt-3">
-        <div>
-            <h2>${track.title}</h2>
-            <p>${track.author}</p>
-        </div>
-        <div>
-            <i class="bi bi-three-dots-vertical"></i>
-        </div>
-    </div> `;
-    
-    });
-}
 
 
 
 
-export function selezionata(albumDiv) { 
-    //imposta le features che seguono al mousedown su "albumDiv":
+
+/* ################################ */
+
+
+
+
+export function selezionata(titoloCanzone) { 
+    //imposta le features che seguono al mousedown sul div della canzone titoloCanzone:
     // 
     // 
     // 1)stoppare musica che eventualmente sta suonando
     // 2)aggiornare il testoCanzoneCorrente
     // 3)aggiornare l'event listener attaccato alla CTA play
     // 
-        
-        
-        
+    console.log("selezionata canzone: ", titoloCanzone); 
         //1)
         if (currentTrack!=null &&currentTrack.playing == true) { currentTrack.play(); }
         
+        
+        currentTrack = albumArray.find(track => { return track.title ==titoloCanzone; });
+
+    console.log(currentTrack);
+        
         //2)
-        let testoCanzoneCorrente = document.body.children[4].children[0].children[0];
-        currentTrack = albumArray.find(track => { return track.title == albumDiv.children[0].children[0].innerHTML; });
+        let testoCanzoneCorrente = document.querySelector("#testoCanzoneCorrente");
         testoCanzoneCorrente.innerHTML = currentTrack.title + " by " + currentTrack.author;  //setta testoCanzoneCorrente 
+    console.log(testoCanzoneCorrente.innerHTML);
     
         //3)
         let iconaPlayBassa = document.getElementsByClassName("bi-play-fill")[0];  
@@ -92,17 +86,69 @@ export function selezionata(albumDiv) {
         elClone.addEventListener("mousedown", function () { 
             currentTrack.play();
             console.log("playing");
-        });    
-        
+        });          
 }
     
-
 export function gestioneCanzoni() {
     //setta come selezionata la prima canzone
-    selezionata(divDeiBrani.children[0]);
-
+    selezionata(divDeiBrani.querySelector(".titoloCanzone").innerHTML);
+    
     //attacca EL alle canzoni che attivano il selezionata
     for (let albumEL of divDeiBrani.children) {
-        albumEL.addEventListener("mousedown", function () { selezionata(albumEL); });
+        albumEL.addEventListener("mousedown", function () { selezionata(albumEL.querySelector(".titoloCanzone").innerHTML); });
     }
 }
+
+
+export function impaginaAlbumPagina(p) {
+    //impagina le tracks di albumArray nel divDeiBrani
+
+    albumArray.forEach((track,i) => {
+
+        if (p == "artist") {
+            divDeiBrani.innerHTML+=`<div class="d-flex row align-items-center justify-content-between mt-3">
+            <div class="col-1 col-lg-1 text-center">
+                <p class="mb-0">${i+1}</p>
+            </div>
+            <div class="col-2 col-lg-1">
+            <img src=${track.img} class="" alt="img_album">
+            </div>
+            <div class="col-8 col-lg-8 mt-3">
+                <h2 class="titoloCanzone">${track.title}</h2>
+                <p>${track.rank}</p>
+            </div>
+            <div class="col-1 col-lg-1">
+                <i class="bi bi-three-dots-vertical"></i>
+            </div>
+            <div class="d-none d-lg-block col-lg-1 text-center">
+            <p class="mb-0">${track.duration}</p>
+            </div>
+            </div>`;}
+        
+        
+        
+        if (p == "album") {
+            divDeiBrani.innerHTML += `<div class="d-flex align-items-center justify-content-between mt-3">
+            <div>
+                <h2 class="titoloCanzone">${track.title}</h2>
+                <p>${track.author}</p>
+            </div>
+            <div>
+                <i class="bi bi-three-dots-vertical"></i>
+            </div>
+        </div> `
+}  
+    });
+    console.log("titoli: ", divDeiBrani.querySelectorAll(".titoloCanzone"));
+
+}
+
+
+
+/* 
+
+let divDeiBrani = document.getElementById("divBrani");
+let titoli=divDeiBrani.querySelectorAll(".titoloCanzone");
+
+
+*/
