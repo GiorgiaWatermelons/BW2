@@ -21,6 +21,7 @@ fetch(url) //fetch per info artista
         }
     })
     .then(response => {
+        console.log("prima response: ", response);
     impaginazioneInfoArtista(response); //impagina info artista
         
         fetch(response.tracklist) //fetch per brani artista

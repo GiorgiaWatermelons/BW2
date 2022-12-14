@@ -1,15 +1,15 @@
 import {loadAlbumArray, impaginaAlbumPagina, gestioneCanzoni} from './class.js';
  
 
-let search = 75621062;
+let search = 230935602;
 
-fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${search}`)
+fetch(sessionStorage.getItem("selectedAlbum"))
     .then(response => {if (response.ok) {
         return response.json();
     }
     })
     .then(response => {
-        
+        console.log(response);
         let tracksArray = response.tracks.data;
         console.log(tracksArray);
         loadAlbumArray(tracksArray); //carica albumArray
