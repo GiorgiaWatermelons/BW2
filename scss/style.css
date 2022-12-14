@@ -1,3 +1,10 @@
+@charset "UTF-8";
+/*togliere lo scroll laterale*/
+body {
+  overflow-x: hidden;
+}
+
+/*mavbar sotto in mobile*/
 .fixed-bottom > div:first-child {
   background-color: rgb(40, 37, 37);
 }
@@ -5,18 +12,22 @@
   background-color: rgba(0, 0, 0, 0.8);
 }
 
+/*impostazione icone generiche*/
 i {
   font-size: 23px;
 }
 
+/*border navbar modalità desktop*/
 #gianfranco {
   border-bottom: 1px solid grey;
 }
 
+/*impostazione generica border radius*/
 .bordo-arrotondato {
   border-radius: 15px;
 }
 
+/*primi album in alto del main*/
 #playlist1 h3 {
   font-size: 90%;
   margin-left: 10px;
@@ -25,23 +36,53 @@ i {
   border-radius: 10px;
 }
 
+/*secondi album in basso del main*/
 .mobile {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
+.mobile .album {
+  display: flex;
+}
+@media screen and (min-width: 1000px) {
+  .mobile .album {
+    display: block;
+  }
+}
+.mobile .album .icone-sotto-album {
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+}
+.mobile .album .testo {
+  padding-left: 15px;
+}
+.mobile .album .testo :nth-child(2) {
+  font-weight: bold;
+}
+.mobile .album .testo :nth-child(3) {
+  align-self: flex-end;
+  margin-top: 40%;
+}
+.mobile .album div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.mobile .album div p {
+  text-align: left;
+}
 .mobile img {
-  max-width: 50%;
+  max-width: 100%;
 }
 @media screen and (min-width: 1000px) {
   .mobile img {
     max-width: 100%;
   }
 }
-.mobile p {
-  text-align: left;
-}
 
+/*impostazioni attività amici*/
 #right #amici {
   justify-content: flex-end;
 }
@@ -61,7 +102,8 @@ i {
   justify-content: between;
   flex-wrap: wrap;
 }
-#right .persona p, #right .persona i {
+#right .persona p,
+#right .persona i {
   font-size: 0.6rem;
 }
 #right .persona img {
