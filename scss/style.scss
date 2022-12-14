@@ -11,6 +11,9 @@ i{
     font-size: 23px;
 }
 
+#gianfranco{
+    border-bottom: 1px solid grey;
+}
 
 .bordo-arrotondato{
     border-radius: 15px;
@@ -27,25 +30,53 @@ i{
     }
 }
 
-.testo{
-   text-align: left;
-   position: absolute;
-   right: 23%;
-   div{
-    position: relative;
-    left: 70%;
-    top: 105px;
+.mobile{
+    display: flex;
+    justify-content: space-between; 
+    flex-wrap: wrap;
+    img{
+        max-width: 50%;
+        @media screen and (min-width:1000px) {
+            max-width: 100%;
+        }
+    }
     p{
-        padding-top: 9px;
-        padding-right: 5px;
-    }
-    i{
         
-        font-size: 28px;
+        text-align: left;
     }
-   }
 }
 
+#right{
+    #amici{
+       justify-content: flex-end;
+    }
+    #attivita{
+        display:flex;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+        i{
+            font-size: 16px;
+        }
+    }
+    .window{
+       transform: rotate(90deg);
+    }
+    .persona{
+        display:flex;
+        justify-content:between;
+       flex-wrap: wrap;
+ 
+       p,i{
+          font-size: 0.6rem;
+       }
+       img{
+          border-radius: 50%;
+          width: 70%;
+       }
+    }
+ }
+
+/*pagina search*/
 #div-search{
     text-align: center;
     div{

@@ -2,12 +2,15 @@
   background-color: rgb(40, 37, 37);
 }
 .fixed-bottom > div:last-child {
-
   background-color: rgba(0, 0, 0, 0.8);
 }
 
 i {
   font-size: 23px;
+}
+
+#gianfranco {
+  border-bottom: 1px solid grey;
 }
 
 .bordo-arrotondato {
@@ -22,24 +25,51 @@ i {
   border-radius: 10px;
 }
 
-.testo {
+.mobile {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.mobile img {
+  max-width: 50%;
+}
+@media screen and (min-width: 1000px) {
+  .mobile img {
+    max-width: 100%;
+  }
+}
+.mobile p {
   text-align: left;
-  position: absolute;
-  right: 23%;
-}
-.testo div {
-  position: relative;
-  left: 70%;
-  top: 105px;
-}
-.testo div p {
-  padding-top: 9px;
-  padding-right: 5px;
-}
-.testo div i {
-  font-size: 28px;
 }
 
+#right #amici {
+  justify-content: flex-end;
+}
+#right #attivita {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+#right #attivita i {
+  font-size: 16px;
+}
+#right .window {
+  transform: rotate(90deg);
+}
+#right .persona {
+  display: flex;
+  justify-content: between;
+  flex-wrap: wrap;
+}
+#right .persona p, #right .persona i {
+  font-size: 0.6rem;
+}
+#right .persona img {
+  border-radius: 50%;
+  width: 70%;
+}
+
+/*pagina search*/
 #div-search {
   text-align: center;
 }
@@ -82,5 +112,4 @@ i {
 
 .bottom {
   height: 150px;
-
 }/*# sourceMappingURL=style.css.map */
