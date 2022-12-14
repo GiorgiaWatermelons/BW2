@@ -9,6 +9,26 @@ fetch(sessionStorage.getItem("selectedAlbum"))
     }
     })
     .then(response => {
+
+    
+        console.log("JSON fetchato",response);
+        document.querySelector("div").innerHTML = `<div class="row" id="immagine_album">
+                                                   <div class="col-sm-2 col-md-2 col-lg-1" onclick="history.back()"><i class="bi bi-arrow-left freccia_indietro_album" "></i></div>
+                                                   <img src=${response.cover} alt="img_album" class="col-sm-8 col-md-8 col-lg-4">
+                                                   <div class="d-none d-lg-block col-lg-6 d-flex flex-column">
+                                                    <div class="col-12 h-25">
+                                                    </div>
+                                                    <p class="d-none d-lg-block col-12">ALBUM</p>
+                                                    <h1 class="d-none d-lg-block col-12">${response.title}</h1>
+                                                    <div class="d-none d-lg-block col-12 d-flex flex-row">
+                                                       <img src="${response.artist.picture_small}" class="rounded-circle" alt="img_artista">
+                                                       <span>${response.artist.name} • ${response.release_date} • ${response.nb_tracks}, ${response.duration} </span>
+                                                      </div>
+                                                   ///IMG-NOME ARTISTI-DATA-NUM.BRANI///
+                                                    </div>
+                                                   </div> 
+                                                   `;        
+        infoAlbum.children[0].innerHTML = response.title;
         console.log(response);
         let tracksArray = response.tracks.data;
         console.log(tracksArray);
