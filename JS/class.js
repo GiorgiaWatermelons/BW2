@@ -45,15 +45,7 @@ export function loadAlbumArray(tracksArray) { //carica albumArray, partendo da u
     console.log("ecco albumArray: ", albumArray);
 }
 
-
-
-
-
-
 /* ################################ */
-
-
-
 
 export function selezionata(titoloCanzone) { 
     //imposta le features che seguono al mousedown sul div della canzone titoloCanzone:
@@ -142,13 +134,3 @@ export function impaginaAlbumPagina(p) {
     console.log("titoli: ", divDeiBrani.querySelectorAll(".titoloCanzone"));
 
 }
-
-
-
-/* 
-
-let divDeiBrani = document.getElementById("divBrani");
-let titoli=divDeiBrani.querySelectorAll(".titoloCanzone");
-
-
-*/
