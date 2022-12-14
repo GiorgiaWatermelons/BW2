@@ -2,7 +2,6 @@
   background-color: rgb(40, 37, 37);
 }
 .fixed-bottom > div:last-child {
-
   background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -82,5 +81,25 @@ i {
 
 .bottom {
   height: 150px;
+}
 
+.freccia_indietro_album {
+  font-size: 1.5rem;
+}
+
+.icone_album {
+  font-size: 1.3rem;
+}
+
+.icona_play {
+  font-size: 2.5rem;
+  color: #1db954;
+}
+
+#immagine_album {
+  background: linear-gradient(180deg, #1db954, #191414);
+}
+
+body {
+  background: linear-gradient(180deg, rgb(33, 37, 41), black);
 }/*# sourceMappingURL=style.css.map */

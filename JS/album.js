@@ -12,9 +12,16 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${search}`)
     .then(response => {
     
         console.log("JSON fetchato",response);
-        document.querySelector("div").innerHTML = `<div class="row">
-                                                   <div class="col-2"><i class="bi bi-arrow-left" style="font-size:1.8rem"></i></div>
-                                                   <img src=${response.cover} alt="img_album" class="col-8"></div>
+        document.querySelector("div").innerHTML = `<div class="row" id="immagine_album">
+                                                   <div class="col-sm-2 col-md-2 col-lg-1" onclick="history.back()"><i class="bi bi-arrow-left freccia_indietro_album" "></i></div>
+                                                   <img src=${response.cover} alt="img_album" class="col-sm-8 col-md-8 col-lg-4">
+                                                   <div class="d-none d-lg-block col-lg-6 d-flex flex-column">
+                                                    <p class="d-none d-lg-block col-12">ALBUM</p>
+                                                   <h1 class="d-none d-lg-block col-12">${response.title}</h1>
+                                                   ///IMG-NOME ARTISTI-DATA-NUM.BRANI///
+                                                    </div>
+                                                   </div>
+ 
                                                    `;        
         infoAlbum.children[0].innerHTML = response.title;
     
