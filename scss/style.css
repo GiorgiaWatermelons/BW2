@@ -1,6 +1,386 @@
+@charset "UTF-8";
+/*togliere lo scroll laterale*/
+body {
+  overflow-x: hidden;
+}
+
+/*mavbar sotto in mobile*/
 .fixed-bottom > div:first-child {
   background-color: rgb(40, 37, 37);
 }
 .fixed-bottom > div:last-child {
-  background-color: rgba(0, 0, 0, 0.364);
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/*impostazione icone generiche*/
+i {
+  font-size: 23px;
+}
+
+/*border navbar modalità desktop*/
+#gianfranco {
+  border-bottom: 1px solid grey;
+}
+
+/*impostazione generica border radius*/
+.bordo-arrotondato {
+  border-radius: 15px;
+}
+
+/*primi album in alto del main*/
+#playlist1 h3 {
+  font-size: 90%;
+  margin-left: 10px;
+}
+#playlist1 img {
+  border-radius: 10px;
+}
+
+/*secondi album in basso del main*/
+.mobile {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.mobile .album {
+  display: flex;
+}
+@media screen and (min-width: 1000px) {
+  .mobile .album {
+    display: block;
+  }
+}
+.mobile .album .icone-sotto-album {
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+}
+.mobile .album .testo {
+  padding-left: 15px;
+}
+.mobile .album .testo :nth-child(2) {
+  font-weight: bold;
+}
+.mobile .album .testo :nth-child(3) {
+  align-self: flex-end;
+  margin-top: 40%;
+}
+.mobile .album div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.mobile .album div p {
+  text-align: left;
+}
+.mobile img {
+  max-width: 100%;
+}
+@media screen and (min-width: 1000px) {
+  .mobile img {
+    max-width: 100%;
+  }
+}
+
+/*impostazioni attività amici*/
+#right #amici {
+  justify-content: flex-end;
+}
+#right #attivita {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+#right #attivita i {
+  font-size: 16px;
+}
+#right .window {
+  transform: rotate(90deg);
+}
+#right .persona {
+  display: flex;
+  justify-content: between;
+  flex-wrap: wrap;
+}
+#right .persona p,
+#right .persona i {
+  font-size: 0.6rem;
+}
+#right .persona img {
+  border-radius: 50%;
+  width: 70%;
+}
+
+/*pagina search*/
+#div-search {
+  text-align: center;
+}
+#div-search div div {
+  margin: 10px;
+  height: 130px;
+  border-radius: 15px;
+  text-align: left;
+}
+#div-search div :first-child {
+  background-color: #e03301;
+}
+#div-search div :nth-child(2) {
+  background-color: #1e3264;
+}
+#div-search div :nth-child(3) {
+  background-color: #e9105c;
+}
+#div-search div :nth-child(4) {
+  background-color: #158a08;
+}
+#div-search div :nth-child(5) {
+  background-color: #bc5800;
+}
+#div-search div :nth-child(6) {
+  background-color: #d84000;
+}
+#div-search div :nth-child(7) {
+  background-color: #de108b;
+}
+#div-search div :nth-child(8) {
+  background-color: #84629f;
+}
+#div-search div :nth-child(9) {
+  background-color: #f4ea1e;
+}
+#div-search div :nth-child(10) {
+  background-color: #5db4e0;
+}
+
+.bottom {
+  height: 150px;
+}
+
+.freccia_indietro_album {
+  font-size: 1.5rem;
+}
+
+.icone_album {
+  font-size: 1.3rem;
+}
+
+.icona_play {
+  font-size: 2.5rem;
+  color: #1db954;
+}
+
+#immagine_album {
+  background: linear-gradient(180deg, #1db954, #191414);
+}
+
+body {
+  background: linear-gradient(180deg, rgb(33, 37, 41), black);
+}
+
+.artist__header {
+  position: relative;
+}
+
+#artist__arrow {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  z-index: 1;
+}
+
+#artist__arrow__color {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 35px;
+}
+
+#artist__image {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  opacity: 0.5;
+}
+@media screen and (min-width: 992px) {
+  #artist__image {
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center;
+    height: 300px;
+    width: 550px;
+    opacity: 0.5;
+  }
+}
+@media screen and (min-width: 1000px) {
+  #artist__image {
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center;
+    height: 300px;
+    width: 570px;
+    opacity: 0.5;
+  }
+}
+
+#artist__name {
+  font-size: 50px;
+  position: absolute;
+  bottom: 70px;
+  left: 30px;
+}
+@media screen and (min-width: 992px) {
+  #artist__name {
+    font-size: 50px;
+  }
+}
+
+#artist__ascoltatori1 {
+  margin-top: 2px;
+  margin-bottom: 0px;
+  position: absolute;
+  bottom: 10px;
+  left: 30px;
+}
+@media screen and (max-width: 992px) {
+  #artist__ascoltatori1 {
+    display: none;
+  }
+}
+@media screen and (min-width: 992px) {
+  #artist__ascoltatori1 {
+    font-size: 20px;
+  }
+}
+
+#artist__ascoltatori2 {
+  margin-top: 2px;
+  margin-bottom: 0px;
+  color: grey;
+}
+@media screen and (min-width: 992px) {
+  #artist__ascoltatori2 {
+    display: none;
+  }
+}
+
+#artist__verificato {
+  margin-top: 2px;
+  margin-bottom: 0px;
+  position: absolute;
+  bottom: 120px;
+  left: 30px;
+}
+@media screen and (max-width: 992px) {
+  #artist__verificato {
+    display: none;
+  }
+}
+@media screen and (min-width: 992px) {
+  #artist__verificato {
+    font-size: 20px;
+  }
+}
+
+#artist__verificato__icona {
+  color: #2596be;
+}
+@media screen and (max-width: 992px) {
+  #artist__verificato__icona {
+    display: none;
+  }
+}
+@media screen and (min-width: 992px) {
+  #artist__verificato__icona {
+    font-size: 20px;
+  }
+}
+
+#boxicone1 {
+  margin-bottom: 3px;
+}
+@media screen and (min-width: 992px) {
+  #boxicone1 {
+    display: none;
+  }
+}
+
+#seguiti1 {
+  margin: auto;
+  border-color: rgba(255, 255, 255, 0.2);
+  border: 0.2px solid;
+  border-radius: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+#puntiverticali {
+  margin-left: 10px;
+  color: grey;
+}
+#puntiverticali:hover {
+  color: green;
+}
+
+#shuffle:hover {
+  color: green;
+}
+
+#boxicone2 {
+  margin-top: 10px;
+}
+@media screen and (max-width: 992px) {
+  #boxicone2 {
+    display: none;
+  }
+}
+
+#seguiti2 {
+  margin: auto;
+  border-color: rgba(255, 255, 255, 0.2);
+  border: 0.2px solid;
+  border-radius: 8px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#puntiorizzontali {
+  color: grey;
+}
+#puntiorizzontali:hover {
+  color: green;
+}
+
+#immagine_circle {
+  padding-left: 10px;
+}
+#immagine_circle #immagine_circle_sfondo {
+  background-color: white;
+  border-radius: 10px;
+  padding: 3px;
+  padding-right: 5px;
+  padding-left: 5px;
+  font-size: 10px;
+}
+
+#artist__8_brani_di {
+  color: grey;
+}
+
+#artist__rank {
+  color: grey;
+}
+
+#artist__duration {
+  color: grey;
+}
+
+#div_immagine_cover_piccola {
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */

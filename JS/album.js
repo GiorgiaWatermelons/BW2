@@ -1,72 +1,72 @@
+import {loadAlbumArray, impaginaAlbumPagina, gestioneCanzoni} from './class.js';
+ 
 
-let search = 75621062;
-let infoAlbum = document.querySelectorAll("div")[1];
-let divDegliAlbum = document.body.children[3];
-fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${search}`)
+let search = 230935602;
+
+fetch(sessionStorage.getItem("selectedAlbum"))
     .then(response => {if (response.ok) {
         return response.json();
     }
     })
     .then(response => {
-        console.log(response);
-        document.querySelector("div").innerHTML = `<img src=${response.cover} alt="img_album">`;
+
+    
+        console.log("JSON fetchato",response);
+        document.querySelector("div").innerHTML = `<div class="row" id="immagine_album">
+                                                   <div class="col-sm-2 col-md-2 col-lg-1" onclick="history.back()"><i class="bi bi-arrow-left freccia_indietro_album" "></i></div>
+                                                   <img src=${response.cover} alt="img_album" class="col-sm-8 col-md-8 col-lg-4">
+                                                   <div class="d-none d-lg-block col-lg-6 d-flex flex-column">
+                                                    <div class="col-12 h-25">
+                                                    </div>
+                                                    <p class="d-none d-lg-block col-12">ALBUM</p>
+                                                    <h1 class="d-none d-lg-block col-12">${response.title}</h1>
+                                                    <div class="d-none d-lg-block col-12 d-flex flex-row">
+                                                       <img src="${response.artist.picture_small}" class="rounded-circle" alt="img_artista">
+                                                       <span>${response.artist.name} • ${response.release_date} • ${response.nb_tracks}, ${response.duration} </span>
+                                                      </div>
+                                                   ///IMG-NOME ARTISTI-DATA-NUM.BRANI///
+                                                    </div>
+                                                   </div> 
+                                                   `;        
         infoAlbum.children[0].innerHTML = response.title;
+        console.log(response);
+        let tracksArray = response.tracks.data;
+        console.log(tracksArray);
+        loadAlbumArray(tracksArray); //carica albumArray
         
-        impaginaAlbum(response); //impagina gli album
+        impaginaAlto(response); //impagina prima parte pagina 
 
-        gestisciCanzoneSelezionata(response);
+        impaginaAlbumPagina("album"); //impagina le tracks di albumArray nel divDeiBrani
+
+        gestioneCanzoni(); //gestisce il comportamento della scritta della canzone selezionata
+
+        //albumArray[2].play(); funziona
 
     });
 
+function impaginaAlto(response) {
+    let infoAlbum = document.querySelectorAll("div")[1];
+    document.querySelector("div").innerHTML = `<div class="row">` +
+    ` <div class="col-2"><i class="bi bi-arrow-left" style="font-size:1.8rem"></i></div>` +
+    `<img src=${response.cover} alt="img_album" class="col-8"></div>`;
+                                                   
+infoAlbum.children[0].innerHTML = response.title;
 
 
-function impaginaAlbum(response) {
-    //impagina tutti gli album 
-    let tracksArray = response.tracks.data;
-    console.log(tracksArray);
-    tracksArray.forEach(e => {
-        
-        
-        
-        divDegliAlbum.innerHTML += `<div class="d-flex align-items-center justify-content-between mt-3">
-        <div>
-            <h2>${e.title}</h2>
-            <p>${response.artist.name}</p>
-        </div>
-        <div>
-            <i class="bi bi-three-dots-vertical"></i>
-        </div>
-    </div> `;
-    
-    });
+//INSERISCO IL NOME ALBUM DINAMICO
+    let nomeAlbum = document.body.children[1].children[0];
+nomeAlbum.innerHTML = `<h1 id="nome_album">${response.title}</h1>`;
+
+
+//inserisco anche nome artista e anno
+let nomeArtista = document.body.children[1].children[1].children[1];
+nomeArtista.innerHTML =`${response.artist.name}`;
+console.log("nomeArtista",nomeArtista.innerHTML)
+
+let annoAlbum = document.body.children[1].children[2].children[1];
+annoAlbum.innerHTML = `${response.release_date}`;
+
+//inserisco l'IMMAGINE ARTISTA
+let fotoArtista = document.body.children[1].children[1].children[0];
+fotoArtista.innerHTML =`<img src="${response.artist.picture_small}" class="rounded-circle" alt="img_artista">`
 }
-
-function gestisciCanzoneSelezionata(response) {
-    //1) setta il nome di default della canzone selezionata che appare nella barra sotto
-    //2) mette degli event listener sulle varie canzoni in modo che quando ci si clicca sopra
-    //   cambia il nome della canzone selezionata
-    
-    let testoCanzoneCorrente = document.body.children[4].children[0].children[0];
-    
-    //sistemo il nome canzone nel caso di default
-    testoCanzoneCorrente.innerHTML = response.tracks.data[0].title + " by " + response.artist.name;
-
-
-
-    //metto EL alle tracks
-
-    let albumArray = divDegliAlbum.children;
-    
-    console.log(albumArray);
-    for (let e of albumArray){
-        e.addEventListener("mousedown", function () {
-            testoCanzoneCorrente.innerHTML = e.children[0].children[0].innerHTML + " by " + response.artist.name;
-        });
-    }
-}
-
-
-
-
-
-    
