@@ -13,8 +13,47 @@ href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.c
 </head>
 
 <body class="bg-dark text-white">
+ 
+  <!--div generale con 3 parti per desktop-->
+   <div class="row">
+  
+  <!--parte sinistra desktop-->
+  <div class="d-none d-lg-block col-lg-3 ps-3 opacity-75" id="parte-sinistra">
+    <!--navbar in desktop-->
+    <nav id="gianfranco">
+      <a href="home.html"><p><i class="bi bi-house-door"></i> Home</p></a>
+      <a href="search.html"><p><i class="bi bi-search"></i> Search</p></a>
+      <p><i class="bi bi-collection"></i>Libreria</p>
+    </nav>
 
-    <!-- div con immagine album -->
+    <!--parte dotto la navbar media-->
+    <div id="gianfranco">
+      <p><i class="bi bi-plus-square"></i> Crea playlist</p>
+      <p><i class="bi bi-suit-heart-fill"></i> Brani che ti piacciono</p>
+      <p><i class="bi bi-bookmark"></i> I tuoi episodi</p>
+    </div>
+
+    <div class="fs-6 mt-3">
+      <p>Indie Mix</p>
+      <p>Alta Rotazione</p>
+      <p>Hot Hits Italia</p>
+      <p>Songs to Sing in the Car</p>
+      <p>Graffiti-pop</p>
+      <p>Songs to Sing in the Shower</p>
+      <p>Maroon 5</p>
+      <p>Top Hits</p>
+      <p>I tuoi brani preferiti del 2022</p>
+      <p>Chrismas Hits</p>
+      <p>Graffiti Pop</p>
+      <p>Tropical House</p>
+      <p>Dance Hits</p>
+    </div>
+  </div>
+  
+   <!--div centrale-->
+   <div class="col col-lg-7 px-0">
+  
+                 <!-- div con immagine album -->
 
     <div class="container container justify-content-center" id="immagine_album">
       <img src="img/images.jpeg" class="w-50"alt="img_album">
@@ -35,9 +74,9 @@ href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.c
 </div>
 
 <!-- div barra icone -->
-<div class="container d-flex justify-content-between icone_album d-sm-block d-md-block d-lg-none d-xl-none d-xxl-none">
-    <div class="d-flex ">
-    <i class="bi bi-heart py-3 px-3"></i>
+<div class="container d-flex justify-content-between icone_album d-lg-none">
+    <div class="d-flex "> <!--ICONE PARTE MOBILE-->
+    <i class="bi bi-heart py-3 px-3" ></i>
     <i class="bi bi-arrow-down-circle py-3 px-3"></i>
     <i class="bi bi-three-dots-vertical py-3 px-3"></i>
     </div>
@@ -47,11 +86,21 @@ href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.c
         <i class="bi bi-play-circle-fill icona_play py-1 px-3 "></i>
     </div>
 </div>
-<div class="d-flex d-none d-lg-block">
-      <i class="bi bi-play-circle-fill icona_play "></i>
-      <i class="bi bi-heart"></i>
-      <i class="bi bi-arrow-down-circle"></i>
-      <i class="bi bi-three-dots"></i>
+<div class="d-flex d-none d-lg-block bg-dark">
+ <div class="row pt-3"> <!--ICONE PARTE DESKTOP-->
+      <i class="d-flex justify-content-around col-1 bi bi-play-circle-fill icona_play p-3 ps-5"></i>
+      <i class="d-flex justify-content-around col-1 bi bi-heart py-4 ps-4 px-0"></i>
+      <i class="d-flex justify-content-around col-1 bi bi-arrow-down-circle py-4 px-0"></i>
+      <i class="d-flex justify-content-around col-1 bi bi-three-dots py-4 px-0"></i>
+ </div>
+ 
+ <div class="row icone_desktop_album">
+  <p class="col-1 text-center ps-4 pe-0 mb-0">#</p>
+  <p class="col-2 mb-0">TITOLO</p>
+  <p class="col-2 offset-4 mb-0">RIPRODUZIONI</p>
+  <i class="col-2 offset-1 bi bi-clock mb-0"></i>
+  <hr id="riga_album"> 
+</div>
 </div>
   
 
@@ -83,10 +132,60 @@ href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.c
     <div class="d-flex flex-column align-items-center">
       <i class="bi bi-collection"></i>
       <p>Libreria</p>
+      </div>
     </div>
   </div>
-</div>
+ </div> <!--div fine parte centrale-->
 
+ <!--div parte destra desktop-->
+
+ <!--parte laterale amici-->
+ <aside id="right" class="d-none d-lg-block col-lg-2 px-2 mt-2">
+
+  <section id="attivita">
+    <h6 class="m-0"><strong>attività amici</strong></h6>
+    <span>
+      <i class="bi bi-person-add"></i>
+      <i class="bi bi-x"></i>
+    </span>
+  </section>
+  <section class="persona">
+    <div class="col-2">
+      <img src="img/alfredoingraldo.jpeg" alt="foto profilo">
+    </div>
+    <div class="col-8 tizio">
+      <p class="mb-1"> <strong>Alfredo Ingraldo aka Master</strong> </p>
+      <p class="m-0"> in camera <i class="bi bi-dot"> sad songs</i> </p>
+      <i class="bi bi-disc ">EP |||</i>
+    </div>
+    <div class="col-2 ps-2">
+      <p> 4ore</p>
+    </div>
+    <div class="col-2">
+      <img src="img/andreamiriello.jpeg" alt="foto profilo">
+    </div>
+    <div class="col-8 tizio">
+      <p class="mb-1"> <strong>Paolo Volpe</strong> </p>
+      <p class="m-0"> in camera <i class="bi bi-dot"> sad songs</i> </p>
+      <i class="bi bi-disc ">EP |</i>
+    </div>
+    <div class="col-2 ps-2">
+      <p> 8 ore</p>
+    </div>
+    <div class="col-2">
+      <img src="img/Federicodeangelis.jpg" alt="Federico de Ambrosis">
+    </div>
+    <div class="col-8 tizio">
+      <p class="mb-1"> <strong>Federico de Ambrosis</strong> </p>
+      <p class="m-0"> in camera <i class="bi bi-dot"> sad songs</i> </p>
+      <i class="bi bi-disc ">EP |</i>
+    </div>
+    <div class="col-2 ps-2">
+      <p>3 ore</p>
+     </div>
+   </section>
+ </aside>  <!--fine parte destra desktop-->
+</div> <!--div dello schermo generale desktop-->
 
 <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js' integrity='sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4' crossorigin='anonymous'>
 </script>

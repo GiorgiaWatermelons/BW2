@@ -212,3 +212,18 @@ body{
     background: linear-gradient(180deg,rgb(33,37,41),black) ;
 }
 
+#riga_album{
+   width: 92%;
+   display: flex;
+   align-items: center;
+   margin-left: 4%;
+   margin-right: 4%;
+}
+
+.icone_desktop_album{
+    i{ font-size: 1rem;}
+   
+    align-items: flex-end;
+    color: rgba(255, 255, 255, 0.8);
+}
+
