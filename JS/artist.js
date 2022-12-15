@@ -2,9 +2,11 @@ import {loadAlbumArray, impaginaAlbumPagina, gestioneCanzoni } from './class.js'
 
 //fa il fetch dall'url che è stato salvato nella sessionStorage durante l'ultima search
 
-let infoArtista = document.querySelectorAll("div")[0];
-let ascoltatori = document.querySelectorAll("div")[1]
-let immagineCerchio = document.body.children[3].children[0];
+
+
+let infoArtista = document.querySelector("#artist__header");
+let ascoltatori = document.querySelector("ascoltatori");
+let immagineCerchio = document.querySelector("immagine_circle");
 let autoreCerchio = document.body.children[3].children[1].children[1];
 let url = sessionStorage.getItem("urlLastSearch");
 
@@ -45,15 +47,20 @@ fetch(url) //fetch per info artista
 
 function impaginazioneInfoArtista(response) { //impagina info artista
     infoArtista.innerHTML = `
-    <div class="position-absolute top-0 start-30" onclick="history.back()"><i class="bi bi-arrow-left"></i></div>
-    <img src=${response.picture_big} class="img-fluid" alt="img_artista">
-    <h1 class="position-absolute bottom-0 start-30">${response.name}</h1>`;
 
-        ascoltatori.innerHTML = `<p class="mx-2 mb-0 py-3">${response.nb_fan} ascoltatori mensili</p>`;
+    <div id="artist__arrow" onclick="history.back()"><i id="artist__arrow__color" class="bi bi-arrow-left-circle-fill"></i></div>
+    <img src=${response.picture_big} id="artist__image"  width="1000" height="1000" alt="img_artista">
+    <span id="artist__verificato" class="mx-2 mb-0 py-3"><i id="artist__verificato__icona" class="bi bi-patch-check-fill"></i><span> Artista verificato</span></span> 
+    <h1 id="artist__name">${response.name}</h1>
+    <p id="artist__ascoltatori1" class="mx-2 mb-0 py-3"> ${response.nb_fan} ascoltatori mensili</p>`;
+
+        ascoltatori.innerHTML = ` <p id="artist__ascoltatori2" class="mx-2 mb-0 py-3">${response.nb_fan} ascoltatori mensili</p>`;
 
         immagineCerchio.innerHTML = `
                                     <img src=${response.picture_small} class="rounded-circle" alt="img_artista">
-                                    <i class="bi bi-heart position-absolute bottom-0 end-0 text-white"></i>
+                                    <i id="immagine_circle_sfondo" class="bi bi-heart-fill position-absolute text-dark bottom-0 end-0"></i>
+                                    
+
                                     `;
 
         autoreCerchio.innerHTML = `<p>8 brani di ${response.name}</p>`;
