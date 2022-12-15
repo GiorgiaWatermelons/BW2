@@ -3,7 +3,7 @@
 
 let searchInput = document.querySelector("input");
 
-let name = "queen";
+
 let url = null;
 
 
