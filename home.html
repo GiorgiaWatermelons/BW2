@@ -12,7 +12,9 @@
 </head>
 
 <body class="bg-dark text-white">
-  <div class="row">
+
+  <div class="row" >
+
 
     <!--parte sinistra desktop-->
     <div class="d-none d-lg-block col-lg-3 ps-3 opacity-75" id="parte-sinistra">
@@ -62,6 +64,9 @@
         </div>
       </div>
 
+
+      <!--parte sotto navbar-->
+
       <div class="container-fluid d-flex mt-4 fs-6">
         <div>
           <p class="px-4">Musica</p>
@@ -71,7 +76,9 @@
         </div>
       </div>
 
-      <!-- playlist 1 -->
+
+      <!-- playlist 1 sopra da 6 -->
+
       <div class="container-fluid mt-2" id="playlist1">
         <div class="row">
           <div class="col-6 d-flex align-items-center p-1">
@@ -101,7 +108,9 @@
         </div>
       </div>
 
-      <!-- playlist 2 -->
+
+      <!-- playlist 2 sotto da 10-->
+
       <h4 class="d-none d-lg-block mt-4 mb-2">Altro di ciò che ti piace</h4>
       <div class="mobile">
 
@@ -186,7 +195,9 @@
           </div>
         </div>
       </div>
-      <div class="mobile">
+
+      <div class="mobile" id="margine-desktop">
+
         <div class="col-12 col-lg-2 p-2 bordo-arrotondato album">
           <div>
             <img src="img/illuminate.jpeg" alt="" class="bordo-arrotondato">
@@ -270,6 +281,7 @@
       </div>
 
 
+
       <!-- parte finale: display fixed -->
       <div class="fixed-bottom d-flex flex-column d-lg-none">
         <div class="container d-flex justify-content-around align-items-center p-3 rounded">
@@ -298,6 +310,7 @@
 
     <!--parte laterale amici-->
     <aside id="right" class="d-none d-lg-block col-lg-2 px-2 mt-2">
+
 
       <section id="attivita">
         <h6 class="m-0"><strong>attività amici</strong></h6>
@@ -344,6 +357,60 @@
     </aside>
   </div>
 
+  <!--barra di riproduzione in modalità desktop-->
+  <footer id="player" class="d-none d-lg-flex col-12 container-fluid text-white">
+
+    <!--album in corso-->
+    <div class="album-playing-container col-2">
+      <img src="img/X2.jpeg" alt="canzone" class="pointer">
+      <div class="album-name">
+        <a href="#">Sogni matti</a>
+        <a href="#">Album</a>
+      </div>
+      <div class="icone-player">
+        <a href="#"><i class="bi bi-suit-heart text-white"></i></i></a>
+      </div>
+    </div>
+    <!--album in corso fine-->
+    <!--controller player-->
+    <div class="player-controller-container col-8">
+      <div class="player-controller">
+        <ul>
+          <li><a href="#"><i class="bi bi-shuffle"></i></a></li>
+          <li><a href="#"><i class="bi bi-skip-backward-fill"></i></a></li>
+          <li><a href="#"><i class="bi bi-play-circle-fill"></i></a></li>
+          <li><a href="#"><i class="bi bi-skip-forward-fill"></i></a></li>
+          <li> <a href="#"><i class="bi bi-repeat"></i></a></li>
+        </ul>
+      </div>
+      <div class="progressbar-and-number">
+        <span class="song-progress">0:25</span>
+        <span>
+          <input type="range" />
+        </span>
+        <span class="song-duration">4:35</span>
+      </div>
+    </div>
+
+    <!--fine controller player-->
+
+    <!--controller di destra-->
+    <div class="right-controller-container col-2">
+      <div class="right-controller">
+        <a href="#"><i class="bi bi-mic-fill text-white"></i></a>
+        <a href="#"><i class="bi bi-collection text-white"></i></a>
+        <a href="#"><i class="bi bi-pc-display text-white"></i></a>
+        <a href="#"><i class="bi bi-volume-up-fill text-white"></i></a>
+      </div>
+      <div>
+        <input type="range" />
+      </div>
+    </div>
+    </div>
+  </footer>
+
+
+
   <!-- div.carmelo>p*3{carmelo} -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
@@ -351,6 +418,7 @@
 
 
     <script src="JS/home.js" type="module"></script>
+
 
   </body>
 </html>
