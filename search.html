@@ -9,75 +9,112 @@
   </title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" />
   <link rel="stylesheet" href="scss/style.css">
+
 </head>
 
 <body class="bg-dark">
-  <h2 class="text-white">Cerca</h2>
-
+  <!--parte in alto search per il js-->
+  <h2 class="text-white fw-bold ms-4 mt-2">Cerca</h2>
+  <i class="bi bi-search text-white ms-4"></i>
   <input type="text" placeholder='cosa vuoi cercare?'>
 
+  <!--div di riferimento per il result-->
   <div class="container d-flex justify-content-center align-items-center m-4"></div>
 
-  <div id="div-search" class="text-white" id="">
+  <!--parte centrale search--> 
+  <div id="div-search" class="text-white">
     <h3>Sfoglia tutto</h3>
-    <div class="row">
 
-      <div class="col-5">
-        <p>Podcast</p> 
+    <!--cards di search-->
+    <div class="row" id="carte-search">
+      <div class="col-5 primo-child">
+        <p>Podcast</p>
+        <picture>
+          <img src="img/podcast.jpeg" alt="card">
+        </picture>
+      </div>
+      <div class="col-5 secondo-child">
+        <p>Create per te</p>
+        <picture>
+          <img src="img/create-per-te.jpeg" alt="card">
+        </picture>
+      </div>
+      <div class="col-5 terzo-child">
+        <p>Nuove uscite</p>
+        <picture>
+          <img src="img/nuove-uscite.jpeg" alt="card">
+        </picture>
+      </div>
+      <div class="col-5 quarto-child">
+        <p>Pop</p>
+        <picture>
+          <img src="img/pop.jpeg" alt="card">
+        </picture>
       </div>
       <div class="col-5">
-        <p>Create per te</p> 
+        <p>Hip Hop</p>
+        <picture>
+          <img src="img/hip-hop.jpeg" alt="card">
+        </picture>
       </div>
       <div class="col-5">
-        Nuove uscite
+        <p>Dance/ Elettronica</p>
+        <picture>
+          <img src="img/dance-elettronica.jpeg" alt="card">
+        </picture>
       </div>
       <div class="col-5">
-        Pop
+        <p>Latina</p>
+        <picture>
+          <img src="img/latina.jpeg" alt="card">
+        </picture>
       </div>
       <div class="col-5">
-        Hip Hop
+        <p>Classifiche</p>
+        <picture>
+          <img src="img/classifiche.jpeg" alt="card">
+        </picture>
       </div>
       <div class="col-5">
-        Dance/Elettronica
+        <p>Di tendenza</p>
+        <picture>
+          <img src="img/tendenza.jpeg" alt="card">
+        </picture>
       </div>
       <div class="col-5">
-        Latina
+        <p>Allenamento</p>
+        <picture>
+          <img src="img/allenamento.jpeg" alt="card">
+        </picture>
       </div>
-      <div class="col-5">
-        Classifiche
-      </div>
-      <div class="col-5">
-        Di tendenza
-      </div>
-      <div class="col-5">
-        Allenamento
-      </div>
-    </div>
-     <!-- parte finale: display fixed -->
-  <div class="fixed-bottom d-flex flex-column">
-    <div class="container d-flex justify-content-around align-items-center p-3 rounded" >
-      <p class="mb-0">tegami & tegami</p>
-      <i class="bi bi-pc-display"></i>
-      <i class="bi bi-heart"></i>
-      <i class="bi bi-play-fill"></i>
     </div>
 
-    <div class="container d-flex justify-content-around rounded p-2">
-      <div class="d-flex flex-column align-items-center">
-        <i class="bi bi-house-door"></i>
-        <p>Home</p>
+    <!-- parte finale: display fixed -->
+    <div class="fixed-bottom d-flex flex-column">
+      <div class="container d-flex justify-content-around align-items-center p-3 rounded">
+        <p class="mb-0">tegami & tegami</p>
+        <i class="bi bi-pc-display"></i>
+        <i class="bi bi-heart"></i>
+        <i class="bi bi-play-fill"></i>
       </div>
-      <div class="d-flex flex-column align-items-center">
-        <i class="bi bi-search"></i>
-        <p>Cerca</p>
-      </div>
-      <div class="d-flex flex-column align-items-center">
-        <i class="bi bi-collection"></i>
-        <p>Libreria</p>
+      <!--parte finale nav bar mobile-->
+      <div class="container d-flex justify-content-around rounded p-2">
+        <div class="d-flex flex-column align-items-center">
+          <i class="bi bi-house-door"></i>
+          <p>Home</p>
+        </div>
+        <div class="d-flex flex-column align-items-center">
+          <i class="bi bi-search"></i>
+          <p>Cerca</p>
+        </div>
+        <div class="d-flex flex-column align-items-center">
+          <i class="bi bi-collection"></i>
+          <p>Libreria</p>
+        </div>
       </div>
     </div>
-  </div>
 
   </div>
 
