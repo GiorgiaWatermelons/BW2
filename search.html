@@ -23,7 +23,7 @@
   <!--div di riferimento per il result-->
   <div class="container d-flex justify-content-center align-items-center m-4"></div>
 
-  <!--parte centrale search--> 
+  <!--parte centrale search-->
   <div id="div-search" class="text-white">
     <h3>Sfoglia tutto</h3>
 
@@ -92,7 +92,7 @@
     </div>
 
     <!-- parte finale: display fixed -->
-    <div class="fixed-bottom d-flex flex-column">
+    <div class="fixed-bottom d-flex flex-column d-lg-none">
       <div class="container d-flex justify-content-around align-items-center p-3 rounded">
         <p class="mb-0">tegami & tegami</p>
         <i class="bi bi-pc-display"></i>
@@ -117,6 +117,58 @@
     </div>
 
   </div>
+
+    <!--barra di riproduzione in modalità desktop-->
+    <footer id="player" class="d-none d-lg-flex col-12 container-fluid text-white">
+
+      <!--album in corso-->
+      <div class="album-playing-container col-2">
+        <img src="img/X2.jpeg" alt="canzone" class="pointer">
+        <div class="album-name">
+          <a href="#">Sogni matti</a>
+          <a href="#">Album</a>
+        </div>
+        <div class="icone-player">
+          <a href="#"><i class="bi bi-suit-heart text-white"></i></i></a>
+        </div>
+      </div>
+      <!--album in corso fine-->
+      <!--controller player-->
+      <div class="player-controller-container col-8">
+        <div class="player-controller">
+          <ul>
+            <li><a href="#"><i class="bi bi-shuffle"></i></a></li>
+            <li><a href="#"><i class="bi bi-skip-backward-fill"></i></a></li>
+            <li><a href="#"><i class="bi bi-play-circle-fill"></i></a></li>
+            <li><a href="#"><i class="bi bi-skip-forward-fill"></i></a></li>
+            <li> <a href="#"><i class="bi bi-repeat"></i></a></li>
+          </ul>
+        </div>
+        <div class="progressbar-and-number">
+          <span class="song-progress">0:25</span>
+          <span>
+            <input type="range" />
+          </span>
+          <span class="song-duration">4:35</span>
+        </div>
+      </div>
+  
+      <!--fine controller player-->
+  
+      <!--controller di destra-->
+      <div class="right-controller-container col-2">
+        <div class="right-controller">
+          <a href="#"><i class="bi bi-mic-fill text-white"></i></a>
+          <a href="#"><i class="bi bi-collection text-white"></i></a>
+          <a href="#"><i class="bi bi-pc-display text-white"></i></a>
+          <a href="#"><i class="bi bi-volume-up-fill text-white"></i></a>
+        </div>
+        <div>
+          <input type="range" />
+        </div>
+      </div>
+      </div>
+    </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
