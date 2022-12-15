@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 /*canzone in modalità desktop*/
 #player {
   width: 100%;
@@ -203,6 +204,7 @@
   background-color: white;
 }
 
+
 /*togliere lo scroll laterale*/
 body {
   overflow-x: hidden;
@@ -245,6 +247,7 @@ i {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+
   /*impostazioni di ogni album*/
 }
 .mobile .album {
@@ -253,6 +256,7 @@ i {
   /*imopstazioni testo laterale degli album*/
 }
 @media screen and (min-width: 992px) {
+
   .mobile .album {
     display: block;
   }
@@ -283,17 +287,21 @@ i {
 .mobile img {
   max-width: 100%;
 }
+
 @media screen and (min-width: 992px) {
+
   .mobile img {
     max-width: 100%;
   }
 }
 
 /*impostazioni attività amici*/
+
 #right {
   /*impostazioni attività side bar destra*/
   /*impostazioni di ogni amico*/
 }
+
 #right #amici {
   justify-content: flex-end;
 }
@@ -305,6 +313,8 @@ i {
 #right #attivita i {
   font-size: 16px;
 }
+
+
 #right .persona {
   display: flex;
   justify-content: between;
@@ -320,6 +330,7 @@ i {
 }
 
 /*pagina search*/
+
 /*indicazione generale*/
 #div-search {
   text-align: center;
@@ -414,6 +425,7 @@ i {
 .bottom {
   height: 150px;
 
+
 }
 
 .freccia_indietro_album {
@@ -435,5 +447,214 @@ i {
 
 body {
   background: linear-gradient(180deg, rgb(33, 37, 41), black);
+
+}
+
+.artist__header {
+  position: relative;
+}
+
+#artist__arrow {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  z-index: 1;
+}
+
+#artist__arrow__color {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 35px;
+}
+
+#artist__image {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  opacity: 0.5;
+}
+@media screen and (min-width: 992px) {
+  #artist__image {
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center;
+    height: 300px;
+    width: 550px;
+    opacity: 0.5;
+  }
+}
+@media screen and (min-width: 1000px) {
+  #artist__image {
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center;
+    height: 300px;
+    width: 570px;
+    opacity: 0.5;
+  }
+}
+
+#artist__name {
+  font-size: 50px;
+  position: absolute;
+  bottom: 70px;
+  left: 30px;
+}
+@media screen and (min-width: 992px) {
+  #artist__name {
+    font-size: 50px;
+  }
+}
+
+#artist__ascoltatori1 {
+  margin-top: 2px;
+  margin-bottom: 0px;
+  position: absolute;
+  bottom: 10px;
+  left: 30px;
+}
+@media screen and (max-width: 992px) {
+  #artist__ascoltatori1 {
+    display: none;
+  }
+}
+@media screen and (min-width: 992px) {
+  #artist__ascoltatori1 {
+    font-size: 20px;
+  }
+}
+
+#artist__ascoltatori2 {
+  margin-top: 2px;
+  margin-bottom: 0px;
+  color: grey;
+}
+@media screen and (min-width: 992px) {
+  #artist__ascoltatori2 {
+    display: none;
+  }
+}
+
+#artist__verificato {
+  margin-top: 2px;
+  margin-bottom: 0px;
+  position: absolute;
+  bottom: 120px;
+  left: 30px;
+}
+@media screen and (max-width: 992px) {
+  #artist__verificato {
+    display: none;
+  }
+}
+@media screen and (min-width: 992px) {
+  #artist__verificato {
+    font-size: 20px;
+  }
+}
+
+#artist__verificato__icona {
+  color: #2596be;
+}
+@media screen and (max-width: 992px) {
+  #artist__verificato__icona {
+    display: none;
+  }
+}
+@media screen and (min-width: 992px) {
+  #artist__verificato__icona {
+    font-size: 20px;
+  }
+}
+
+#boxicone1 {
+  margin-bottom: 3px;
+}
+@media screen and (min-width: 992px) {
+  #boxicone1 {
+    display: none;
+  }
+}
+
+#seguiti1 {
+  margin: auto;
+  border-color: rgba(255, 255, 255, 0.2);
+  border: 0.2px solid;
+  border-radius: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+#puntiverticali {
+  margin-left: 10px;
+  color: grey;
+}
+#puntiverticali:hover {
+  color: green;
+}
+
+#shuffle:hover {
+  color: green;
+}
+
+#boxicone2 {
+  margin-top: 10px;
+}
+@media screen and (max-width: 992px) {
+  #boxicone2 {
+    display: none;
+  }
+}
+
+#seguiti2 {
+  margin: auto;
+  border-color: rgba(255, 255, 255, 0.2);
+  border: 0.2px solid;
+  border-radius: 8px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#puntiorizzontali {
+  color: grey;
+}
+#puntiorizzontali:hover {
+  color: green;
+}
+
+#immagine_circle {
+  padding-left: 10px;
+}
+#immagine_circle #immagine_circle_sfondo {
+  background-color: white;
+  border-radius: 10px;
+  padding: 3px;
+  padding-right: 5px;
+  padding-left: 5px;
+  font-size: 10px;
+}
+
+#artist__8_brani_di {
+  color: grey;
+}
+
+#artist__rank {
+  color: grey;
+}
+
+#artist__duration {
+  color: grey;
+}
+
+#div_immagine_cover_piccola {
+  text-align: center;
 
 }/*# sourceMappingURL=style.css.map */
