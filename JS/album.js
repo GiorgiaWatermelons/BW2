@@ -11,8 +11,8 @@ fetch(sessionStorage.getItem("selectedAlbum"))
     .then(response => {
 
     
-        console.log("JSON fetchato",response);
-        document.querySelector("div").innerHTML = `<div class="row" id="immagine_album">
+        console.log("JSON fetchato",response);  ///CAMBIATO IL QUERYSELECTOR///
+        document.querySelector("#immagine_album").innerHTML = `<div class="row" id="immagine_album">
                                                    <div class="col-sm-2 col-md-2 col-lg-1" onclick="history.back()"><i class="bi bi-arrow-left freccia_indietro_album" "></i></div>
                                                    <img src=${response.cover} alt="img_album" class="col-sm-8 col-md-8 col-lg-4">
                                                    <div class="d-none d-lg-block col-lg-6 d-flex flex-column">
@@ -24,7 +24,7 @@ fetch(sessionStorage.getItem("selectedAlbum"))
                                                        <img src="${response.artist.picture_small}" class="rounded-circle" alt="img_artista">
                                                        <span>${response.artist.name} • ${response.release_date} • ${response.nb_tracks}, ${response.duration} </span>
                                                       </div>
-                                                   ///IMG-NOME ARTISTI-DATA-NUM.BRANI///
+                                                   
                                                     </div>
                                                    </div> 
                                                    `;        
@@ -44,10 +44,11 @@ fetch(sessionStorage.getItem("selectedAlbum"))
 
     });
 
+ 
 function impaginaAlto(response) {
     let infoAlbum = document.querySelectorAll("div")[1];
     document.querySelector("div").innerHTML = `<div class="row">` +
-    ` <div class="col-2"><i class="bi bi-arrow-left" style="font-size:1.8rem"></i></div>` +
+    ` <div class="col-2"><i class="bi bi-arrow-left"></i></div>` +
     `<img src=${response.cover} alt="img_album" class="col-8"></div>`;
                                                    
 infoAlbum.children[0].innerHTML = response.title;
@@ -70,3 +71,4 @@ annoAlbum.innerHTML = `${response.release_date}`;
 let fotoArtista = document.body.children[1].children[1].children[0];
 fotoArtista.innerHTML =`<img src="${response.artist.picture_small}" class="rounded-circle" alt="img_artista">`
 }
+
