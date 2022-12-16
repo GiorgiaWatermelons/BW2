@@ -186,7 +186,7 @@ href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.c
 
 
 <!--barra di riproduzione in modalità desktop-->
-<footer id="player" class="d-none d-lg-flex col-12 container-fluid text-white">
+<footer id="player" class="d-none align-items-center d-lg-flex col-12 container-fluid text-white">
 
   <!--album in corso-->
   <div class="album-playing-container col-2">
@@ -202,36 +202,20 @@ href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.c
   <!--controller player-->
   <div class="player-controller-container col-8">
     <div class="player-controller">
-      <ul>
-        <li><a href="#"><i class="bi bi-shuffle"></i></a></li>
-        <li><a href="#"><i class="bi bi-skip-backward-fill"></i></a></li>
-        <li id="playCircle"><a href="#"><i class="bi bi-play-circle-fill"></i></a></li>
-        <li><a href="#"><i class="bi bi-skip-forward-fill"></i></a></li>
-        <li> <a href="#"><i class="bi bi-repeat"></i></a></li>
-      </ul>
-    </div>
-    <div class="progressbar-and-number">
-      <span class="song-progress">0:25</span>
-      <span>
-        <input type="range" id="rangeTempo"/> <!-- range tempo!!!!! -->
-      </span>
-      <span class="song-duration">4:35</span>
-    </div>
+      <figure>
+    <audio id="Audio"
+    controls
+    src="https://cdns-preview-e.dzcdn.net/stream/c-e9efed3d51251e303be3516aed93edc2-4.mp3"
+    >
+        <a href="https://cdns-preview-e.dzcdn.net/stream/c-e9efed3d51251e303be3516aed93edc2-4.mp3"
+        >
+            Download audio
+        </a>
+</audio>
+    </figure>
   </div>
+</div>
 
-  <!--controller di destra-->
-  <div class="right-controller-container col-2">
-    <div class="right-controller">
-      <a href="#"><i class="bi bi-mic-fill text-white"></i></a>
-      <a href="#"><i class="bi bi-collection text-white"></i></a>
-      <a href="#"><i class="bi bi-pc-display text-white"></i></a>
-      <a href="#"><i class="bi bi-volume-up-fill text-white"></i></a>
-    </div>
-    <div>
-      <input type="range" id="rangeVolume"/> <!-- range volume!!!! -->
-    </div>
-  </div>
-  </div>
 </footer>
 
 

@@ -1,5 +1,4 @@
-import { Track } from './class.js';
-
+import { settaLoadbar } from './class1.js';
 
 
 let albumImgsArray = document.getElementsByClassName("album");
@@ -36,34 +35,7 @@ preferredAlbumsArray.forEach((e, i) => {
 
 });
 
-//fa quello che dice il suo nome
-function settaLoadbar() { 
-
-    let track = JSON.parse(sessionStorage.getItem("currentTrack"));
-    if (track != null) {
-        
-        let track = new Track(track.title, "Carlino", track.author, track.anteprimaUrl, rank = 0, track.img, duration = -1);
-        console.log(track);
-        let testoCanzoneCorrenteDesktop = document.querySelector("footer").children[0].children[1].children[0];
-        testoCanzoneCorrenteDesktop.innerHTML = track.title_short + " " + track.author;  //setta testoCanzoneCorrente 
-        
-        let immagineCanzoneCorrente = document.querySelector("footer").children[0].children[0];
-        immagineCanzoneCorrente.setAttribute("src", `${track.img}`);
-        
-        let song = new Audio(track.anteprimaUrl);
-        console.log(song);
-        let i = -1;
-        document.getElementById("playCircle").addEventListener("mousedown", function () { 
-            if (i = -1) {
-                song.play();
-                i = 1;
-            } else { song.pause(); i = -1;}
-        });
-        
-    } else { document.querySelector("footer").innerHTML='';;}
-}
-settaLoadbar();
-
+settaLoadbar(); //setto la loadbar con l'ultima track selezionata
 
 
 

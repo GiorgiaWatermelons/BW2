@@ -89,58 +89,10 @@ export function selezionata(titoloCanzone) {
         });  
     
     /* versione desktop  */
+    let audio = document.getElementById("Audio");
+    console.log("l'audio corrente: ", audio);
+    audio.setAttribute("src",currentTrack.anteprimaUrl);
 
-
-
-    //durata canzone
-    let songDuration = document.getElementsByClassName("song-duration")[0];
-    songDuration.innerHTML = secondsToTime(currentTrack.duration);
-    console.log("currentTrackDuration:     ", currentTrack.song);
-
-    //setto indice secondi trascorsi
-    let currentTimeIndex = document.getElementsByClassName("song-progress")[0];
-    currentTimeIndex.innerHTML = "0:00";
-
-    //EL del tasto play
-    let playCircle= document.getElementById("playCircle"); //tasto play della loadbar versione desktop
-    let playCircle1 = playCircle.cloneNode(true);
-    playCircle.parentNode.replaceChild(playCircle1, playCircle);
-        //attacco il nuovo EL
-    let interval = null; //davvero necessario?
-    
-
-    //Attenzione questo è il pallino Temporale di Gianfranco
-    let pallinoTemporale = document.getElementById("rangeTempo"); //pallino che segna il tempo nella loadbar
-    pallinoTemporale.setAttribute("min", "0");
-    pallinoTemporale.setAttribute("max", `${currentTrack.song.duration}`);
-        playCircle1.addEventListener("mousedown", function () { 
-            currentTrack.play();
-            if (currentTrack.playing == true) {
-                interval = setInterval(function () { aggiorna(currentTimeIndex, currentTrack); pallinoTemporale.setAttribute("value", `${(currentTrack.song.currentTime / currentTrack.song.duration) * 100}`);}, 10);
-            } else { clearInterval(interval); }
-            console.log("playing in desktop version baby");
-        });  
-        //document.getElementById("rangeTempo").setAttribute("value", `${(currentTrack.song.currentTime / currentTrack.duration) * 100}`);
-    
-
-    
-    
-    
-}
-  
-
-
-export function aggiorna(currentTimeIndex,currentTrack){ //mette in currentTimeIndex il valore corrente del tempo di currentTrack
-    console.log("aggiornamento");
-    currentTimeIndex.innerHTML = secondsToTime(currentTrack.song.currentTime);
-}
-
-
-export function secondsToTime(e) { //trasforma come da titolo
-    const m = Math.floor(e % 3600 / 60).toString(),
-        s = Math.floor(e % 60).toString().padStart(2, '0');
-
-    return m + ':' + s;
 }
 
 export function gestioneCanzoni() {
@@ -152,7 +104,6 @@ export function gestioneCanzoni() {
         albumEL.addEventListener("mousedown", function () { selezionata(albumEL.querySelector(".titoloCanzone").innerHTML); });
     }
 }
-
 
 export function impaginaAlbumPagina(p) {
     //impagina le tracks di albumArray nel divDeiBrani

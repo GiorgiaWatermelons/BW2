@@ -1,21 +1,11 @@
+import { settaLoadbar } from './class1.js';
 
-
-
+/* logica funzionamento input search */
 let searchInput = document.querySelector("input");
-
-
-let url = null;
-
-
-
-
 searchInput.addEventListener("keyup", function () {
     console.log(searchInput.value);
     search(searchInput.value);
 });
-
-
-
 function impagina(response) { //usa la response per creare la card dell'artista, e ci appiccica l'event listener per ridirezionare
 
     document.querySelector("div").innerHTML=" <div class='card' style='width: 18rem;'>"+
@@ -32,7 +22,6 @@ function impagina(response) { //usa la response per creare la card dell'artista,
     card.addEventListener("mousedown", function () { window.location.href = "artist.html"; });
 
 }
-
 function search(name) { //carica la pagina con i dati dell'artista usando la func impagina, salva url per fetch pagina artista in localStorage 
      
     fetch(` https://striveschool-api.herokuapp.com/api/deezer/search?q=${name}`)
@@ -52,4 +41,8 @@ function search(name) { //carica la pagina con i dati dell'artista usando la fun
                 impagina(response);
             }).catch(error=>console.log(error));
     
-    }
+}
+    
+
+settaLoadbar(); //setto la loadbar con l'ultima track selezionata
+
