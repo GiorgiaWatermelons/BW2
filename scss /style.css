@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 /*canzone in modalità desktop*/
 #player {
   width: 100%;
@@ -204,7 +203,6 @@
   background-color: white;
 }
 
-
 /*togliere lo scroll laterale*/
 body {
   overflow-x: hidden;
@@ -242,189 +240,8 @@ i {
   border-radius: 10px;
 }
 
-/*secondi album in basso del main*/
-.mobile {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-
-  /*impostazioni di ogni album*/
-}
-.mobile .album {
-  display: flex;
-  /*icone sotto foto degli album*/
-  /*imopstazioni testo laterale degli album*/
-}
-@media screen and (min-width: 992px) {
-
-  .mobile .album {
-    display: block;
-  }
-}
-.mobile .album .icone-sotto-album {
-  justify-content: space-between;
-  display: flex;
-  flex-direction: row;
-}
-.mobile .album .testo {
-  padding-left: 15px;
-}
-.mobile .album .testo :nth-child(2) {
-  font-weight: bold;
-}
-.mobile .album .testo :nth-child(3) {
-  align-self: flex-end;
-  margin-top: 40%;
-}
-.mobile .album div {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-.mobile .album div p {
-  text-align: left;
-}
-.mobile img {
-  max-width: 100%;
-}
-
-@media screen and (min-width: 992px) {
-
-  .mobile img {
-    max-width: 100%;
-  }
-}
-
-/*impostazioni attività amici*/
-
-#right {
-  /*impostazioni attività side bar destra*/
-  /*impostazioni di ogni amico*/
-}
-
-#right #amici {
-  justify-content: flex-end;
-}
-#right #attivita {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 0.5rem;
-}
-#right #attivita i {
-  font-size: 16px;
-}
-
-
-#right .persona {
-  display: flex;
-  justify-content: between;
-  flex-wrap: wrap;
-}
-#right .persona p,
-#right .persona i {
-  font-size: 0.6rem;
-}
-#right .persona img {
-  border-radius: 50%;
-  width: 70%;
-}
-
-/*pagina search*/
-
-/*indicazione generale*/
-#div-search {
-  text-align: center;
-  margin-bottom: 150px;
-  /*impostazioni card search*/
-}
-#div-search #carte-search {
-  font-size: 20px;
-  font-weight: bold;
-  /*impostazioni foto card search*/
-  /*impostazioni div card*/
-  /*suddivisione colori dei div card search*/
-}
-#div-search #carte-search picture {
-  position: relative;
-  left: 116%;
-}
-@media screen and (min-width: 600px) {
-  #div-search #carte-search picture {
-    left: 107%;
-  }
-}
-@media screen and (min-width: 900px) {
-  #div-search #carte-search picture {
-    left: 105%;
-  }
-}
-#div-search #carte-search picture img {
-  position: absolute;
-  right: 0px;
-  width: 5.3rem;
-  transform: rotate(30deg);
-}
-@media screen and (min-width: 600px) {
-  #div-search #carte-search picture img {
-    max-width: 5.5rem;
-  }
-}
-#div-search #carte-search div {
-  margin: 3%;
-  height: 130px;
-  border-radius: 15px;
-  text-align: left;
-  overflow: hidden;
-}
-#div-search #carte-search .primo-child {
-  background: rgb(224, 51, 1);
-  background: linear-gradient(0deg, rgba(224, 51, 1, 0.7819502801) 12%, rgb(224, 51, 1) 26%);
-}
-#div-search #carte-search .secondo-child {
-  background: rgb(30, 50, 100);
-  background: linear-gradient(0deg, rgba(30, 50, 100, 0.7819502801) 12%, rgb(30, 50, 100) 26%);
-}
-#div-search #carte-search .terzo-child {
-  background: rgb(233, 16, 92);
-  background: linear-gradient(0deg, rgba(233, 16, 92, 0.7819502801) 12%, rgb(233, 16, 92) 26%);
-}
-#div-search #carte-search .quarto-child {
-  background: rgb(21, 138, 8);
-  background: linear-gradient(0deg, rgba(21, 138, 8, 0.7819502801) 12%, rgb(21, 138, 8) 26%);
-}
-#div-search #carte-search :nth-child(5) {
-  background: rgb(188, 88, 0);
-  background: linear-gradient(0deg, rgba(188, 88, 0, 0.7819502801) 12%, rgb(188, 88, 0) 26%);
-}
-#div-search #carte-search :nth-child(6) {
-  background: rgb(216, 64, 0);
-  background: linear-gradient(0deg, rgba(216, 64, 0, 0.7819502801) 12%, rgb(216, 64, 0) 26%);
-}
-#div-search #carte-search :nth-child(7) {
-  background: rgb(222, 16, 139);
-  background: linear-gradient(0deg, rgba(222, 16, 139, 0.7819502801) 12%, rgb(222, 16, 139) 26%);
-}
-#div-search #carte-search :nth-child(8) {
-  background: rgb(132, 98, 159);
-  background: linear-gradient(0deg, rgba(132, 98, 159, 0.7819502801) 12%, rgb(132, 98, 159) 26%);
-}
-#div-search #carte-search :nth-child(9) {
-  background: rgb(244, 234, 30);
-  background: linear-gradient(0deg, rgba(244, 234, 30, 0.7819502801) 12%, rgb(244, 234, 30) 26%);
-}
-#div-search #carte-search :nth-child(10) {
-  background: rgb(93, 180, 224);
-  background: linear-gradient(0deg, rgba(93, 180, 224, 0.7819502801) 12%, rgb(93, 180, 224) 26%);
-}
-
-#margine-desktop {
-  margin-bottom: 130px;
-}
-
-/*impstazioni navbar mobile*/
 .bottom {
   height: 150px;
-
 }
 
 .freccia_indietro_album {
@@ -447,17 +264,6 @@ i {
 body {
   background: linear-gradient(180deg, rgb(33, 37, 41), black);
 }
-
-#riga_album {
-  width: 92%;
-  display: flex;
-  align-items: center;
-  margin-left: 4%;
-  margin-right: 4%;
-}
-
-
-
 
 .artist__header {
   position: relative;
@@ -665,6 +471,216 @@ body {
 
 #div_immagine_cover_piccola {
   text-align: center;
+}
 
+/*secondi album in basso del main*/
+.mobile {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  /*impostazioni di ogni album*/
+}
+.mobile .album {
+  display: flex;
+  /*icone sotto foto degli album*/
+  /*imopstazioni testo laterale degli album*/
+}
+@media screen and (min-width: 992px) {
+  .mobile .album {
+    display: block;
+  }
+}
+.mobile .album .icone-sotto-album {
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+}
+.mobile .album .testo {
+  padding-left: 15px;
+}
+.mobile .album .testo :nth-child(2) {
+  font-weight: bold;
+}
+.mobile .album .testo :nth-child(3) {
+  align-self: flex-end;
+  margin-top: 40%;
+}
+.mobile .album div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.mobile .album div p {
+  text-align: left;
+}
+.mobile img {
+  max-width: 100%;
+}
+@media screen and (min-width: 992px) {
+  .mobile img {
+    max-width: 100%;
+  }
+}
 
+/*impostazioni attività amici*/
+#right {
+  /*impostazioni attività side bar destra*/
+  /*impostazioni di ogni amico*/
+}
+#right #amici {
+  justify-content: flex-end;
+}
+#right #attivita {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+#right #attivita i {
+  font-size: 16px;
+}
+#right .persona {
+  display: flex;
+  justify-content: between;
+  flex-wrap: wrap;
+}
+#right .persona p,
+#right .persona i {
+  font-size: 0.6rem;
+}
+#right .persona img {
+  border-radius: 50%;
+  width: 70%;
+}
+
+/*pagina search*/
+/*indicazione generale*/
+#div-search {
+  text-align: center;
+  margin-bottom: 150px;
+  /*impostazioni card search*/
+}
+#div-search #carte-search {
+  font-size: 20px;
+  font-weight: bold;
+  /*impostazioni foto card search*/
+  /*impostazioni div card*/
+  /*suddivisione colori dei div card search*/
+}
+#div-search #carte-search picture {
+  position: relative;
+  left: 116%;
+}
+@media screen and (min-width: 600px) {
+  #div-search #carte-search picture {
+    left: 107%;
+  }
+}
+@media screen and (min-width: 900px) {
+  #div-search #carte-search picture {
+    left: 105%;
+  }
+}
+#div-search #carte-search picture img {
+  position: absolute;
+  right: 0px;
+  width: 5.3rem;
+  transform: rotate(30deg);
+}
+@media screen and (min-width: 600px) {
+  #div-search #carte-search picture img {
+    max-width: 5.5rem;
+  }
+}
+#div-search #carte-search div {
+  margin: 3%;
+  height: 130px;
+  border-radius: 15px;
+  text-align: left;
+  overflow: hidden;
+}
+#div-search #carte-search .primo-child {
+  background: rgb(224, 51, 1);
+  background: linear-gradient(0deg, rgba(224, 51, 1, 0.7819502801) 12%, rgb(224, 51, 1) 26%);
+}
+#div-search #carte-search .secondo-child {
+  background: rgb(30, 50, 100);
+  background: linear-gradient(0deg, rgba(30, 50, 100, 0.7819502801) 12%, rgb(30, 50, 100) 26%);
+}
+#div-search #carte-search .terzo-child {
+  background: rgb(233, 16, 92);
+  background: linear-gradient(0deg, rgba(233, 16, 92, 0.7819502801) 12%, rgb(233, 16, 92) 26%);
+}
+#div-search #carte-search .quarto-child {
+  background: rgb(21, 138, 8);
+  background: linear-gradient(0deg, rgba(21, 138, 8, 0.7819502801) 12%, rgb(21, 138, 8) 26%);
+}
+#div-search #carte-search :nth-child(5) {
+  background: rgb(188, 88, 0);
+  background: linear-gradient(0deg, rgba(188, 88, 0, 0.7819502801) 12%, rgb(188, 88, 0) 26%);
+}
+#div-search #carte-search :nth-child(6) {
+  background: rgb(216, 64, 0);
+  background: linear-gradient(0deg, rgba(216, 64, 0, 0.7819502801) 12%, rgb(216, 64, 0) 26%);
+}
+#div-search #carte-search :nth-child(7) {
+  background: rgb(222, 16, 139);
+  background: linear-gradient(0deg, rgba(222, 16, 139, 0.7819502801) 12%, rgb(222, 16, 139) 26%);
+}
+#div-search #carte-search :nth-child(8) {
+  background: rgb(132, 98, 159);
+  background: linear-gradient(0deg, rgba(132, 98, 159, 0.7819502801) 12%, rgb(132, 98, 159) 26%);
+}
+#div-search #carte-search :nth-child(9) {
+  background: rgb(244, 234, 30);
+  background: linear-gradient(0deg, rgba(244, 234, 30, 0.7819502801) 12%, rgb(244, 234, 30) 26%);
+}
+#div-search #carte-search :nth-child(10) {
+  background: rgb(93, 180, 224);
+  background: linear-gradient(0deg, rgba(93, 180, 224, 0.7819502801) 12%, rgb(93, 180, 224) 26%);
+}
+
+#margine-desktop {
+  margin-bottom: 130px;
+}
+
+/*impstazioni navbar mobile*/
+.bottom {
+  height: 150px;
+}
+
+.freccia_indietro_album {
+  font-size: 1.5rem;
+}
+
+.icone_album {
+  font-size: 1.3rem;
+}
+
+.icona_play {
+  font-size: 2.5rem;
+  color: #1db954;
+}
+
+#immagine_album {
+  background: linear-gradient(180deg, #1db954, #191414);
+}
+
+body {
+  background: linear-gradient(180deg, rgb(33, 37, 41), black);
+}
+
+#riga_album {
+  width: 92%;
+  display: flex;
+  align-items: center;
+  margin-left: 4%;
+  margin-right: 4%;
+}
+
+.icone_desktop_album {
+  align-items: flex-end;
+  color: rgba(255, 255, 255, 0.8);
+}
+.icone_desktop_album i {
+  font-size: 1rem;
 }/*# sourceMappingURL=style.css.map */

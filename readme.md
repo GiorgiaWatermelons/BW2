@@ -21,6 +21,4 @@ Giacomo 1 —> Pagina home versione desktop,
 Luca 1    —> 	sistemare allineamento immagini
 
 
-Lorenzo 1 ——> riga 15 cambiato il query selector
-              funzione impaginaAlto non funziona
-			  			    album 
+Lorenzo 1 ——> incontro di lotta sistemare stile 			    album 
